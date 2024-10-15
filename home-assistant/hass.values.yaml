@@ -17,7 +17,7 @@ image:
 # @default -- See below
 env:
   # -- Set the container timezone
-  TZ: Europe/Athens
+  TZ: Europe/Stockholm
   PUID: 1000
   PGID: 1000
 
@@ -46,14 +46,14 @@ ingress:
       traefik.ingress.kubernetes.io/router.middlewares: cert-manager-redirect-https@kubernetescrd
 
     hosts:
-      - host: hass.k3s.yorgos.net.gr
+      - host: hass.hellstrm.com
         paths:
           - path: /
             pathType: Prefix
     tls:
       - secretName: hass-tls
         hosts:
-          - hass.k3s.yorgos.net.gr
+          - hass.hellstrm.com
 
 # -- Enable devices to be discoverable
 hostNetwork: true
